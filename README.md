@@ -2,14 +2,6 @@
 
 **Scale your AI memory without the noise. Project Synapse brings dynamic context pruning and neural plasticity to your data infrastructure.**
 
-This repository is a full-stack monorepo combining a high-performance Python (FastAPI) cognitive backend powered by Cognee with a minimalist Next.js frontend (Linear-style UI).
-
-## Project Structure
-
-- `apps/frontend`: Next.js App Router providing a highly responsive, Linear-inspired UI.
-- `apps/backend`: FastAPI integration with Cognee for advanced context retrieval and cognitive architecture.
-- `packages/shared`: Shared types and business logic.
-
 ## Getting Started
 
 ### Prerequisites

@@ -1,0 +1,11 @@
+{
+  "name": "@synapse-core/shared",
+  "version": "1.0.0",
+  "description": "Shared logic and types for Synapse Core",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

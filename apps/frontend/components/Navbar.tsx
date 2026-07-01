@@ -1,5 +1,6 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { Terminal, Star, GitFork } from "lucide-react";
@@ -25,6 +26,19 @@ function GithubIcon(props: React.SVGProps<SVGSVGElement>) {
 }
 
 export function Navbar() {
+  const [stars, setStars] = useState<string | null>(null);
+
+  useEffect(() => {
+    fetch('https://api.github.com/repos/Gitesh08/synapse-core')
+      .then(res => res.json())
+      .then(data => {
+        if (data && data.stargazers_count !== undefined) {
+          setStars(data.stargazers_count.toString());
+        }
+      })
+      .catch(console.error);
+  }, []);
+
   const containerVariants = {
     hidden: { opacity: 0, y: -20 },
     visible: { 
@@ -62,12 +76,12 @@ export function Navbar() {
           </nav>
 
           <div className="flex items-center gap-3 border-l border-[#333333] pl-6">
-            <a href="#" className="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded border border-[#333333] text-[#A1A1AA] hover:border-white hover:text-white transition-colors text-xs font-medium bg-transparent">
+            <a href="https://github.com/Gitesh08/synapse-core" target="_blank" rel="noopener noreferrer" className="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded border border-[#333333] text-[#A1A1AA] hover:border-white hover:text-white transition-colors text-xs font-medium bg-transparent">
               <Star className="w-4 h-4" />
               <span>Star</span>
-              <span className="bg-[#333333] text-white px-1.5 py-0.5 rounded ml-1">1.2k</span>
+              <span className="bg-[#333333] text-white px-1.5 py-0.5 rounded ml-1">{stars || "..."}</span>
             </a>
-            <a href="#" className="flex items-center justify-center w-8 h-8 rounded border border-[#333333] text-[#A1A1AA] hover:border-white hover:text-white transition-colors bg-transparent">
+            <a href="https://github.com/Gitesh08/synapse-core" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center w-8 h-8 rounded border border-[#333333] text-[#A1A1AA] hover:border-white hover:text-white transition-colors bg-transparent">
               <GithubIcon className="w-4 h-4" />
             </a>
           </div>

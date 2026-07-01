@@ -79,7 +79,7 @@ export function HeroSimulation() {
   const [synapseDiamonds, setSynapseDiamonds] = useState<{id: number, x: number, y: number}[]>([]);
 
   const handleCopy = () => {
-    navigator.clipboard.writeText("npm install @veda/synapse");
+    navigator.clipboard.writeText("pip install synapse-core");
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
@@ -324,8 +324,8 @@ export function HeroSimulation() {
             </button>
           </div>
           <div className="p-4 text-sm font-mono text-[#A1A1AA] flex items-center justify-start gap-4">
-            <span className="text-[#333333] select-none">~</span>
-            <span className="text-white">npm install @veda/synapse</span>
+            <span className="text-[#333333] select-none">$</span>
+            <span className="text-white">pip install synapse-core</span>
           </div>
         </motion.div>
       </div>
